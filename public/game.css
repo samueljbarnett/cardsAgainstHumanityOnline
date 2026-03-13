@@ -1,0 +1,169 @@
+:root{
+    --background:#ffffff;
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    margin:0px;
+    padding:1rem;
+}
+
+.blank{
+    text-decoration: underline;
+}
+
+.blank:empty::before{
+    content: "___";
+}
+
+.blank>button:hover,
+#cardList button:hover{
+    background-color: rgb(75, 75, 75);
+}
+
+.blank>button{
+    background-color: black;
+    color: white;
+    padding:0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid black;
+}
+
+#cardList{
+    list-style: none;
+    padding:0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1rem;
+    justify-content: space-around;
+}
+#cardList>li{
+    flex-basis: calc(50% - 0.5rem);
+    flex-shrink: 1;
+}
+@media screen and (min-width:500px) {
+    #cardList>li{
+        flex-basis: 10rem;
+    }
+}
+#cardList button{
+    background-color: black;
+    color: white;
+    padding:0.5rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+    width:100%;
+    aspect-ratio: 2.25 / 3.5;
+}
+#cardList[hidden]{
+    display: none;
+}
+
+.chosen{
+    background-color: rgb(75, 75, 75);
+}
+
+#roundScore{
+    z-index: 100;
+    position: absolute;
+    top:0%;
+    left:0%;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background);
+    padding:1rem;
+}
+#roundScore>h1{
+    text-align: center;
+}
+#roundScoreOut{
+    list-style: none;
+    padding-left: 0px;
+}
+#roundScoreOut>li{
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+#roundScoreOut>li.winner{
+    background-color: lightgoldenrodyellow;
+}
+
+#prompt{
+    margin-top: 0px;
+    background-color: white;
+    color: black;
+    padding:2rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+#makeChoiceButton{
+    padding:1rem
+}
+
+#responseList{
+    list-style: none;
+    padding:0px;
+    display: grid;
+    gap: 1rem;
+}
+#responseList[hidden]{
+    display: none;
+}
+#responseList button:hover,
+#responseList button.chosen{
+    background-color: lightgray;
+}
+#responseList button .blank{
+    background-color: black;
+    color: white;
+    padding:0.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+#responseList button{
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding:1rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+    font-size: large;
+    line-height: 3rem;
+}
+
+
+#winDialogue{
+    z-index: 100;
+    position: absolute;
+    top:0%;
+    left:0%;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background);
+    padding:1rem;
+}
+#winDialogue>h1{
+    text-align: center;
+}
+#pointsOut{
+    list-style: none;
+    padding-left: 0px;
+}
+#pointsOut>li{
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+#pointsOut>li.winner{
+    background-color: lightgoldenrodyellow;
+}
+#pointsOut>li>span:last-child{
+    float: right;
+}

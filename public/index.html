@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Cards Against Humanity</title>
+    <link href="./favicon.ico" rel="icon" type="image/x-icon">
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <h1>Cards Against Humanity (unofficial) Online</h1>
+    </nav>
+    <form class="join" action="/api/join">
+        <h1>Join a Game!</h1>
+        <div class="interactBox">
+            <label for="gamecode">Enter a game code to join</label>
+            <input id="gamecode" required name="gamecode" maxlength="8">
+            <button type="submit">Join!</button>
+        </div>
+    </form>
+    <div class="create">
+        <h1>Create a Lobby!</h1>
+        <a class="interactBox" href="/newGame.html">Click here to create a new lobby for others to join.</a>
+    </div>
+</body>
+</html>

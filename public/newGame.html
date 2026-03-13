@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Cards Against Humanity - Game Settings</title>
+    <link href="./favicon.ico" rel="icon" type="image/x-icon">
+    <link href="./newGame.css" rel="stylesheet">
+</head>
+<body>
+<form action="/api/createGame">
+    <h1>Lobby Settings</h1>
+
+    <label for="points">Number of points required to win:</label>
+    <input id="points" name="points" type="number" min="1" max="99" value="5" required>
+
+    <label for="playerNameResponses">Play player names as responses:</label>
+    <input id="playerNameResponses" name="playerNameResponses" type="checkbox">
+
+    <label for="classicTurns">Use original next turn rules:</label>
+    <input id="classicTurns" name="classicTurns" type="checkbox">
+    <!-- 
+    <label for="allowPlayerDecks">Allow players to add and remove their own decks:</label>
+    <input id="allowPlayerDecks" name="allowPlayerDecks" type="checkbox">
+    -->
+    <label for="pass">Password protected lobby (leave blank for no password):</label>
+    <input id="pass" name="pass" type="text">
+
+    <label for="name">Choose your player name:</label>
+    <input id="name" name="name" type="text" required minlength="1" maxlength="25">
+
+    <button type="submit">Create Lobby</button>
+</form>
+</body>
+</html>

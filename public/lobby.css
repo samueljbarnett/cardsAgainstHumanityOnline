@@ -1,0 +1,28 @@
+#currentPacks,
+#officialPacks,
+#userPacks,
+#sharedPacks,
+#publicPacks{
+    border:1px solid black;
+    padding: 1rem;
+    list-style: none;
+    max-height: 10rem;
+    overflow-y: auto;
+}
+
+#userPacks:empty::before{
+    content: "You have no custom card packs.";
+}
+#sharedPacks:empty::before{
+    content: "No card packs have been shared with you.";
+}
+
+#currentPacks button>span:first-of-type:not(:last-of-type)::after{
+    content: " - ";
+}
+#publicPacks button>span:first-of-type:not(:last-of-type)::after{
+    content: " - ";
+}
+#sharedPacks button>span:first-of-type:not(:last-of-type)::after{
+    content: " - ";
+}

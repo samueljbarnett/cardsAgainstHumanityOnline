@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Cards Against Humanity - Game</title>
+    <link href="./favicon.ico" rel="icon" type="image/x-icon">
+    <link href="./game.css" rel="stylesheet">
+    <script src="./game.js" defer></script>
+</head>
+<body>
+    <h1 id="prompt"></h1>
+    <button onclick="makeChoice()" id="makeChoiceButton">Make Choice</button>
+    <ol id="cardList"></ol>
+    <ol id="responseList"></ol>
+    <div id="winDialogue" hidden>
+        <h1><span class="winnerName"></span> has won!</h1>
+        <ol id="pointsOut"></ol>
+        <a href="/">Back to home.</a>
+    </div>
+    <div id="roundScore" hidden aria-hidden="true">
+        <h1><span id="roundWinnerName"></span> has won the round!</h1>
+        <ol id="roundScoreOut"></ol>
+    </div>
+</body>
+</html>
