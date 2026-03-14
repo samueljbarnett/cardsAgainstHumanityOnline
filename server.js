@@ -8,9 +8,7 @@ const templates=require("./template.js")
 const {getMimeType}=require("./mime.js")
 const {Game}=require("./game.js")
 const {parseCookies}=require("./parseCookies.js")
-const {req400}=require("./400.js")
-const {req401}=require("./401.js")
-const {req404}=require("./404.js")
+const {req400, req401, req404}=require("./httpResponses.js")
 const http=require("http")
 
 const hexChars="0123456789ABCDEF"
