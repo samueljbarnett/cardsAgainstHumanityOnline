@@ -1,8 +1,14 @@
-function Log(msg){console.log(`${new Date().toISOString()}: [Cards Against Humanity] ${(typeof msg=='string')?msg:JSON.stringify(msg)}`)}
-
 const fs=require("fs")
 const {Deck}=require("./deck.js")
 const {req400}=require("./httpResponses.js")
+
+let VARS={
+    PROJNAME:"Cards Against Humanity",
+}
+exports.setVars=(v)=>{VARS=v}
+
+function Log(msg){console.log(`${new Date().toISOString()}: [${VARS.PROJNAME}] ${(typeof msg=='string')?msg:JSON.stringify(msg)}`)}
+
 
 function loadDeck(path,ID=undefined){
     const cards={
@@ -188,14 +194,6 @@ class Game{
     start(){
         if(this.state!="lobby"){return false}
         if(Object.keys(this.players).length<3){return false}
-
-        console.log("starting game")
-        console.log(this.packs)
-        try {
-            console.log(loadDeck(this.packs[0]))
-        } catch (error) {
-            console.log("failed to load pack!")
-        }
         
         this.prompts=new Deck()
         this.responses=new Deck()

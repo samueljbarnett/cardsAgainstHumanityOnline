@@ -1,15 +1,34 @@
-const HOST=(process.argv[3]!=undefined)?process.argv[3]:"localhost"
-const PORT=(!isNaN(process.argv[2]))?Number(process.argv[2]):8080
-
-function Log(msg){console.log(`${new Date().toISOString()}: [Cards Against Humanity] ${(typeof msg=='string')?msg:JSON.stringify(msg)}`)}
-
 const {StaticDirectory}=require("./staticDir.js")
 const templates=require("./template.js")
 const {getMimeType}=require("./mime.js")
-const {Game}=require("./game.js")
+const game=require("./game.js")
 const {parseCookies}=require("./parseCookies.js")
 const {req400, req401, req404}=require("./httpResponses.js")
 const http=require("http")
+const {parseConf}=require("./parseConf.js")
+
+const VARS=parseConf("./.conf", {
+    HOST:{
+        "type":"string",
+        "default":"localhost"
+    },
+    PORT:{
+        "type":"int",
+        "default":8080
+    },
+    PROJNAME:{
+        "type":"string",
+        "default":"Cards Against Humanity"
+    },
+    CARDS_PATH:{
+        "type":"string",
+        "default":"./base_card_pack"
+    }
+})
+game.setVars(VARS)
+
+function Log(msg){console.log(`${new Date().toISOString()}: [${VARS.PROJNAME}] ${(typeof msg=='string')?msg:JSON.stringify(msg)}`)}
+
 
 const hexChars="0123456789ABCDEF"
 
@@ -53,7 +72,7 @@ function authReq(req,res=undefined){
 }
 
 const server=http.createServer((req,res)=>{
-    const url=new URL(req.url,`http://${HOST}:${PORT}`)
+    const url=new URL(req.url,`http://${VARS.HOST}:${VARS.PORT}`)
 
     if(url.pathname=="/"){url.pathname="/index.html"}
 
@@ -88,9 +107,8 @@ const server=http.createServer((req,res)=>{
                 for(let i=0;i<8;i++){gameID+=hexChars[Math.floor(Math.random()*16)]}
             }
 
-            games[gameID]=new Game(points,pass,gameID,[
-                    "./base_card_pack"
-                ],name,games,
+            games[gameID]=new game.Game(
+                points,pass,gameID,[VARS.CARDS_PATH],name,games,
                 (url.searchParams.get("playerNameResponses")==="on")?2:0,
                 (url.searchParams.get("classicTurns")==="on")?true:false,
                 (url.searchParams.get("allowPlayerDecks")==="on")?true:false)
@@ -320,5 +338,5 @@ const server=http.createServer((req,res)=>{
     req404(req,res)
 })
 
-server.listen(PORT,HOST,
-    ()=>{Log(`CAH server listening on http://${HOST}:${PORT}`)})
+server.listen(VARS.PORT,VARS.HOST,
+    ()=>{Log(`Server listening on http://${VARS.HOST}:${VARS.PORT}`)})
