@@ -1,2 +1,5 @@
+# Config files
+.conf
+
 # Workspaces
 .vscode/
