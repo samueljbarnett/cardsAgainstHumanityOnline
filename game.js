@@ -2,7 +2,7 @@ function Log(msg){console.log(`${new Date().toISOString()}: [Cards Against Human
 
 const fs=require("fs")
 const {Deck}=require("./deck.js")
-const {req400}=require("./400.js")
+const {req400}=require("./httpResponses.js")
 
 function loadDeck(path,ID=undefined){
     const cards={
