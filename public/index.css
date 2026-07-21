@@ -1,6 +1,6 @@
 body{
     display: grid;
-    grid-template-rows: var(--nav-height) 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
     margin: 0%;
 }
 

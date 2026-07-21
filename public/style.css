@@ -7,7 +7,7 @@
 }
 body{
     display: grid;
-    grid-template-rows: var(--nav-height) 1fr;
+    grid-template-rows: 1fr auto;
     grid-template-columns: 1fr;
     margin: 0%;
     background-color: black;
@@ -26,15 +26,16 @@ nav{
     background-color: black;
     color: white;
     border-bottom: 1px solid lightgray;
-    height: var(--nav-height);
+    min-height: var(--nav-height);
     align-content: center;
 }
 nav>h1{
     color: inherit;
-    height: var(--nav-height);
+    min-height: var(--nav-height);
     font-size: x-large;
     padding: 0px 2rem;
     align-content: center;
+    margin: 0px;
 }
 nav a:hover{
     background-color: unset;
