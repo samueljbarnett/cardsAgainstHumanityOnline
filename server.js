@@ -10,7 +10,7 @@ const {parseConf}=require("./parseConf.js")
 const VARS=parseConf("./.conf", {
     HOST:{
         "type":"string",
-        "default":"localhost"
+        "default":"0.0.0.0"
     },
     PORT:{
         "type":"int",
