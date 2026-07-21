@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Cards Against Humanity - Lobby Does not Exist</title>
     <link href="./favicon.ico" rel="icon" type="image/x-icon">
+    <link href="./style.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Lobby Does not Exist</h1>
-    <p>The code you entered is not for an existing lobby.</p>
+    <nav>
+        <h1><a href="/">Cards Against Humanity Online (unofficial)</a></h1>
+    </nav>
+    <main>
+        <h1>Lobby Does not Exist</h1>
+        <p>The code you entered is not for an existing lobby.</p>
 
-    <form class="join" action="/api/join">
-        <h1>Try another code:</h1>
-        <div class="interactBox">
-            <label for="gamecode">Enter a game code to join</label>
-            <input id="gamecode" required name="gamecode" maxlength="8">
-            <button type="submit">Join!</button>
-        </div>
-    </form>
+        <form class="join" action="/api/join">
+            <h1>Try another code:</h1>
+            <div class="interactBox">
+                <label for="gamecode">Enter a game code to join</label>
+                <input id="gamecode" required name="gamecode" maxlength="8">
+                <button type="submit">Join!</button>
+            </div>
+        </form>
+    </main>
 </form>
 </body>
 </html>

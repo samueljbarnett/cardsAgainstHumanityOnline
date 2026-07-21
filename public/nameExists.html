@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Cards Against Humanity - Choose a Name</title>
     <link href="./favicon.ico" rel="icon" type="image/x-icon">
+    <link href="./style.css" rel="stylesheet">
 </head>
 <body>
-    <form class="join" action="/api/join">
-        <h1>Someone already has that name!</h1>
-        <div class="interactBox">
-            <label for="name">Choose your player name:</label>
-            <input id="name" name="name" type="text" required minlength="1" maxlength="25">
-            <button type="submit">Join!</button>
-        </div>
-    </form>
+    <nav>
+        <h1><a href="/">Cards Against Humanity Online (unofficial)</a></h1>
+    </nav>
+    <main>
+        <form class="join" action="/api/join">
+            <h1>Someone already has that name!</h1>
+            <div class="interactBox">
+                <label for="name">Choose your player name:</label>
+                <input id="name" name="name" type="text" required minlength="1" maxlength="25">
+                <button type="submit">Join!</button>
+            </div>
+        </form>
+    </main>
 </form>
 </body>
 </html>
