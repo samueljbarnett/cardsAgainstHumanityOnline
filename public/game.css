@@ -1,14 +1,30 @@
 :root{
-    --background:#ffffff;
+    --background:black;
+    --text:white;
 }
 
 *{
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body{
     display: grid;
     margin:0px;
     padding:1rem;
+    background-color: black;
+}
+
+
+button:hover{
+    background-color: rgb(75, 75, 75);
+}
+button{
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
 }
 
 .blank{
@@ -54,7 +70,7 @@ body{
     color: white;
     padding:0.5rem;
     border-radius: 1rem;
-    border: 1px solid black;
+    border: 1px solid white;
     width:100%;
     aspect-ratio: 2.25 / 3.5;
 }
@@ -74,6 +90,7 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: var(--background);
+    color: var(--text);
     padding:1rem;
 }
 #roundScore>h1{
@@ -86,11 +103,12 @@ body{
 #roundScoreOut>li{
     margin-bottom: 1rem;
     padding: 1rem;
-    border: 1px solid black;
+    border: 1px solid var(--text);
     border-radius: 1rem;
 }
 #roundScoreOut>li.winner{
-    background-color: lightgoldenrodyellow;
+    background-color: white;
+    color: black;
 }
 
 #prompt{
@@ -146,6 +164,7 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: var(--background);
+    color: var(--text);
     padding:1rem;
 }
 #winDialogue>h1{
@@ -158,7 +177,7 @@ body{
 #pointsOut>li{
     margin-bottom: 1rem;
     padding: 1rem;
-    border: 1px solid black;
+    border: 1px solid var(--text);
     border-radius: 1rem;
 }
 #pointsOut>li.winner{
@@ -166,4 +185,17 @@ body{
 }
 #pointsOut>li>span:last-child{
     float: right;
+}
+
+#winDialogue>a:hover{
+    background-color: rgb(75, 75, 75);
+}
+#winDialogue>a{
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    text-decoration: none;
 }

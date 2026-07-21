@@ -1,0 +1,56 @@
+body{
+    display: grid;
+    grid-template-rows: var(--nav-height) 1fr 1fr;
+    margin: 0%;
+}
+
+.join,.create{
+    box-sizing: border-box;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    height:calc(50vh - (var(--nav-height) / 2));
+    padding: 3rem;
+}
+
+.join{
+    background-color: black;
+    color: white;
+}
+
+.create{
+    background-color: white;
+    color: black;
+}
+
+.interactBox{
+    box-sizing: border-box;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    border:1px solid;
+    padding: 2rem;
+    border-radius: 1rem;
+    min-height:10rem;
+}
+
+.join .interactBox
+{border-color: white;}
+.create .interactBox
+{border-color: black;}
+
+
+
+@media screen and (min-aspect-ratio: 1/1) {
+    body{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: initial;
+    }
+    .join,.create{
+        height: calc(100vh - var(--nav-height));
+    }
+}
